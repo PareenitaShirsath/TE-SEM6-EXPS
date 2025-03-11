@@ -35,9 +35,5 @@
 ### **10. Puppet Installation & Configuration**  
 - Install and configure pull-based software configuration management and provisioning tools using Puppet  
 
-### **11. Software Configuration Management with Puppet**  
-- Learn Puppet Blocks: Manifest, Modules, Classes, Functions  
 
-### **12. Provisioning a LAMP/MEAN Stack using Puppet**  
-- Provision a LAMP/MEAN Stack using Puppet Manifest  
 
