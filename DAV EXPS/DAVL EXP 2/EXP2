@@ -1,0 +1,70 @@
+### Full Code Execution
+
+```python
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+# Load data
+data = pd.read_csv("temperatures.csv")
+
+# Display basic information about the dataset
+print("First 5 rows:")
+print(data.head())
+print("\nLast 5 rows:")
+print(data.tail())
+print("\nShape of dataset:", data.shape)
+print("\nMissing values:")
+print(data.isnull().sum())
+print("\nData info:")
+print(data.info())
+
+# Extract features and target variable
+x = data["YEAR"].values.reshape(-1, 1)
+y = data["ANNUAL"]
+
+# Split the data into training and test sets
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
+
+# Print shapes of the training and test sets
+print("\nShape of x_train:", x_train.shape)
+print("Shape of x_test:", x_test.shape)
+print("Shape of y_train:", y_train.shape)
+print("Shape of y_test:", y_test.shape)
+
+# Scatter plot visualization
+plt.figure(figsize=(10,6))
+plt.title("Temperature Plot of India")
+plt.xlabel("Year")
+plt.ylabel("Temperature")
+plt.scatter(x, y, color='blue', label='Full Data')  # Scatter plot for full data
+plt.scatter(x_train, y_train, color='red', label='Training Data', alpha=0.5)
+plt.legend()
+plt.show()
+
+# Create the Linear Regression model and fit it to the training data
+model = LinearRegression()
+model.fit(x_train, y_train)
+
+# Predict on test data
+y_pred = model.predict(x_test)
+
+# Plot regression line
+plt.figure(figsize=(10,6))
+plt.scatter(x_test, y_test, color='blue', label='Actual Data')
+plt.plot(x_test, y_pred, color='red', linewidth=2, label='Regression Line')
+plt.title("Linear Regression on Temperature Data")
+plt.xlabel("Year")
+plt.ylabel("Predicted Temperature")
+plt.legend()
+plt.show()
+
+# Model accuracy
+print("Model Coefficients:", model.coef_)
+print("Model Intercept:", model.intercept_)
+```
+```
+
