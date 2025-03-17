@@ -12,6 +12,3 @@
 | 8       | McCulloch-Pitts Model |
 | 9       | Single Layer Perceptron Learning algorithm |
 | 10      | Error Backpropagation Perceptron Training Algorithm |
-| 11      | Principal Component Analysis |
-| 12      | Applications of the above algorithms as a case study (e.g., Handwriting Recognition using MNIST dataset, classification using IRIS dataset, etc.) |
-
