@@ -1,39 +1,41 @@
-# Experiment No: 6
+# Experiment No. 7
 
 *Aim:*  
-To implement Hebbian Learning algorithms for a given sample data.
+To implement Expectation Maximization algorithms for a given sample data.
 
 *Theory:*  
-Hebbian network is a single layer neural network which consists of one input layer with many input units and one output layer with one output unit.  
-The architecture is usually used for pattern classification.
+The Expectation Maximization (EM) algorithm is an iterative method used in unsupervised ML to estimate unknown parameters in statistical models. It helps to find the best values for unknown parameters, especially when some data is missing or hidden.  
 
-*Hebbian learning algorithm:*  
-1. Set all weight to 0, wi = 0 for i = 1 to n, b (bias) to zero.  
-2. For each input vector s (input vector), t (target output pair), repeat steps 3 to 5:  
-3. Set activations for input units with the input vectors xi = si for i = 1 to n.  
-4. Set the corresponding output value to the output neuron i.e., y = t.  
-5. Update weight & bias by applying Hebbian rule for i = 1 to n:  
-   - wi(new) = wi(old) + xi * y  
-   - b(new) = b(old) + y
+It works in 2 steps:  
+
+*E-step*  
+Estimates missing or hidden values using current parameter estimates.  
+
+*M-step*  
+Updates model parameters to maximize the likelihood based on the estimated values from the E-step.  
+
+This process repeats until the model reaches a stable solution, improving accuracy with each iteration.  
+
+EM is widely used in clustering & handling missing data.  
+
+---
+
+## Algorithm:
+
+1. *Initialization:*  
+   Start with initial parameters, assuming a model for the data.
+
+2. *E-step (Expectation):*  
+   Estimate missing data & calculate the posterior probability of latent variables based on current parameters.  
+   Compute the log-likelihood of observed data.
+
+3. *M-step (Maximization):*  
+   Update model parameters by maximizing the log-likelihood from the E-step, solving an optimization problem.  
+
+4. *Convergence:*  
+   Check if parameters are stable. If not, repeat steps 2 & 3 until convergence.
+
+---
 
 *Conclusion:*  
-Thus, we have successfully studied & implemented Hebbian learning using customer segmentation dataset.# Experiment No: 6
-
-*Aim:*  
-To implement Hebbian Learning algorithms for a given sample data.
-
-*Theory:*  
-Hebbian network is a single layer neural network which consists of one input layer with many input units and one output layer with one output unit.  
-The architecture is usually used for pattern classification.
-
-*Hebbian learning algorithm:*  
-1. Set all weight to 0, wi = 0 for i = 1 to n, b (bias) to zero.  
-2. For each input vector s (input vector), t (target output pair), repeat steps 3 to 5:  
-3. Set activations for input units with the input vectors xi = si for i = 1 to n.  
-4. Set the corresponding output value to the output neuron i.e., y = t.  
-5. Update weight & bias by applying Hebbian rule for i = 1 to n:  
-   - wi(new) = wi(old) + xi * y  
-   - b(new) = b(old) + y
-
-*Conclusion:*  
-Thus, we have successfully studied & implemented Hebbian learning using customer segmentation dataset.
+Thus, we have studied & successfully implemented Expectation Maximization algorithm for customer segmentation.
